@@ -1,0 +1,321 @@
+div.inactive-grid div.x-grid-view table.x-grid-table tr.x-grid-row td.x-grid-cell div.x-grid-cell-inner {
+	color: #888
+}
+
+.transparent-panel {
+	opacity: 0.8;
+}
+
+.fa,
+.fa-menu,
+.fa-title
+{
+	/*top: -1px !important;*/
+	font-size: 14px !important;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.fa-small {
+	top: 0px !important;
+	font-size: 12px !important;
+}
+.fa-big {
+	top: 0px !important;
+	font-size: 18px !important;
+}
+.fa-up {
+	top: -4px !important;
+}
+.fa-menu {
+	/*top: 0px !important;*/
+	font-size: 12px !important;
+}
+.fa-title {
+	font-size: 12px !important;
+	top: -2px !important;
+}
+.fa-white { color: white; }
+.fa-green { color: seagreen; }
+.fa-maroon { color: maroon;	}
+.fa-red { color: indianred;	}
+.fa-orange { color: #EEBB88;	}
+.fa-navy { color: navy;	}
+.fa-blue { color: steelblue; }
+.fa-yellow { color: #E2C77C; }
+.fa-grey { color: #999999;	}
+.fa-brown { color: peru; }
+
+.connect_false {
+	color: red;
+	font-weight: bold;
+}
+
+.connect_true {
+	color: green;
+	font-weight: bold;
+}
+
+.user {
+	color: #9ADE42;
+}
+
+span.runtime {
+	font-size: 10px;
+	padding-left: 8px;
+	font-family: sans;
+	color: #888
+}
+
+span.running {
+	font-size: 10px;
+	font-family: sans;
+	color: #888
+}
+
+span.runtitle {
+	font-size: 13px;
+	padding: 0px;
+	padding-left: 2px;
+	font-weight: bold
+}
+
+.complibCls span.runtitle {
+	font-size: 11px;
+	padding: 0px;
+	padding-left: 2px;
+	font-weight: normal
+}
+
+div.runtime {
+	font-size: 10px;
+	padding-left: 24px;
+	font-family: sans;
+	color: #888
+}
+
+div.running {
+	font-size: 10px;
+	font-family: sans;
+	color: #888
+}
+
+div.runtitle {
+	font-size: 13px;
+	padding: 0px;
+	padding-left: 24px;
+	font-weight: bold
+}
+
+.highlightIcon {
+	font-weight: bold !important;
+	/*color: maroon !important;*/
+	color: #1659ac !important;
+}
+
+div.smallPropertyGrid input.x-form-field {
+	font-size: 11px !important;
+}
+
+tr.errorCls td {
+	color: maroon;
+	font-weight: bold;
+}
+
+tr.infoCls td {
+	color: darkgreen;
+	font-style: italic;
+}
+
+tr.suggestCls td {
+	color: darkblue;
+	font-weight: bold;
+}
+
+tr.installedDomainCls td {
+	color: #999;
+}
+
+tr.myDomainCls td {
+	color: #369;
+}
+
+div.editableCanvas {
+	background: url(../images/grid.png);
+	/*background-color : white;*/
+}
+
+div.disabledCanvas {
+	/*background-color : rgba(40,40,40,0.1) !important;*/
+	background: url(../images/square.gif)
+	/*background-color : rgba(255, 255, 255, 1);*/
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: middle;			
+    max-width: 250px;				
+    min-height: 20px;				
+    padding: 2px;				
+    font-size: 12px;
+    font-family: Calibri, Sans;	
+    background: #FEA; /*lightsteelblue;*/
+    color: #333;
+    z-index: 10;
+    /*border: 0px;*/
+    border: 1px solid #666;
+    border-radius: 4px;			
+    pointer-events: none;			
+}
+
+li.active a {
+	color: #4ca9ea
+}
+
+.multi-line-grid .x-grid-cell-inner,.multi-line-grid .x-grid-hd-inner {
+	white-space: normal !important;
+}
+
+.multi-line-grid .x-grid-cell {
+	vertical-align: middle !important;
+}
+
+.custom-highlight-grid .x-grid-row-focused .x-grid-cell {
+	background-color: rgb(255, 245, 204) !important;
+}
+
+.x-tree-panel .multi-line-grid .x-grid-row .x-grid-cell-inner {
+	height: auto;
+	white-space: normal !important;
+}
+
+.mytree-grid .x-grid-row .x-grid-cell {
+	border-right-width: 1px !important;
+}
+
+.tellmeteacher {
+	font-size: 12px;
+	font-weight: bold;
+	color: navy;
+}
+
+.tellmetitle {
+	font-weight: bold;
+	padding-bottom: 4px;
+	font-size: 11px;
+}
+
+.tellmestudent {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.tellmestudent_ok {
+	color: green;
+}
+
+.tellmestudent_error {
+	color: red;
+}
+
+div.tellmestudent_error a span {
+	color: red;
+}
+
+div.tellmestudent_ok a span {
+	color: #333;
+	font-style: italic;
+}
+
+pre.tellmelog {
+	font-family: tahoma, arial, helvetica;
+	color: #666;
+	font-size: 10px;
+	border: 1px dotted #ddd;
+	background: #eee;
+	padding: 5px;
+}
+
+#app-header {
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #1659ac),
+		color-stop(100%, #429ADE));
+	background-image: -webkit-linear-gradient(top, #1659ac, #429ADE);
+	background-image: -moz-linear-gradient(top, #1659ac, #429ADE);
+	background-image: -o-linear-gradient(top, #1659ac, #429ADE);
+	background-image: -ms-linear-gradient(top, #1659ac, #429ADE);
+	background-image: linear-gradient(top, #1659ac, #429ADE);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1659ac', endColorstr='#429ADE');
+	border-bottom: 1px solid #429ADE
+}
+
+#app-header-title {
+	padding: 8px 5px 5px 45px;
+	background: url(../images/logo.png) no-repeat 5px 5px;
+	background-size: 30px 30px;
+}
+
+#app-header-title a {
+	color: #eee;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #666;
+	text-decoration: none;
+}
+
+#app-header-title a:hover {
+	text-decoration: underline;
+}
+
+/* Show the menu */
+#app-north, #app-north .x-box-inner {
+	overflow: visible;
+}
+
+/* Prule Editor */
+.prule_selectable {
+    background-color: #ccc;
+    font-weight: normal;
+}
+.prule_highlighted {
+    background-color: yellow;
+}
+.prule_op, .prule_op tspan {
+	fill: #339 !important;
+	color: #339 !important;
+	font-weight: bold;
+}
+
+/* User Profile */
+.profile {
+	padding: 10px;
+}
+
+.profile h1 {
+	margin-top:0px;
+	margin-bottom:5px;
+}
+
+.profile_image img {
+	width: 100px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin-right: 20px;
+	float:left;
+}
+
+.profile_detail {
+	line-height: 1.5em;
+}
+
+.x-codemirror.x-form-invalid-field {
+    border-color: #cc3300;
+}
+
+.x-codemirror + .x-mask {
+	opacity: 0.3;
+}
+
+.CodeMirror-line {
+	width: calc(100% + 64px);
+}

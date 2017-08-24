@@ -1,0 +1,58 @@
+Instructions for integrating with Pegasus
+=========================================
+
+Modifications to Wings
+----------------------
+
+1. In the Wings POM, add the following module
+    <module>engines/pegasus</module>
+
+2. In the Wings Portal POM, uncomment the part which says "Wings Pegasus Adapter"
+
+3. Compile Wings. "mvn install".
+	This should also compile Pegasus engine, and put appropriate jars in the Wings Portal
+
+4. Put portal/target/wings-portal-<version>.war to the tomcat container
+
+
+Modifications to Pegasus
+------------------------
+
+1. Install Pegasus 4.6.x (https://pegasus.isi.edu)
+
+
+Additions to Wings portal.properties
+------------------------------------
+
+1. Add the following Pegasus engine configuration to the execution section. Modify the urls and paths according to your installation.
+
+        engine =
+        {
+            name = Pegasus;
+            implementation = edu.isi.wings.execution.engine.api.impl.pegasus.PegasusExecutionEngine;
+            type = BOTH;
+            properties =
+            {
+                pegasus =
+                {
+                    home         = <PEGASUS_HOME>;
+                    storage-dir  = <STORAGE_DIR>;
+                    site-catalog = <SITE_CATALOG_FILE>;
+                    site         = <SITE-1>,<SITE-2>,..,<SITE-N>;
+                }
+            }
+        }
+
+Where,
+
+    PEGASUS_HOME      - Location of Pegasus installation.
+    STORAGE_DIR       - Directory where Pegasus submit directories will be created.
+    SITE_CATALOG_FILE - sites.xml file describing the cluster where Pegasus jobs will execute.
+                        Example: engines/pegasus/resources/sites.xml
+    SITE              - Comma separated list of sites, where jobs can be executed, as defined in the SITE_CATALOG_FILE.
+
+
+Usage
+-----
+
+1. From the "Manage Domains" interface, change the domain execution engine to Pegasus

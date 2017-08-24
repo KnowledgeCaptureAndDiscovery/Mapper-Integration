@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.isi.wings</groupId>
+  <artifactId>wings-oodt-adapter</artifactId>
+  <name>Wings OODT Adapter</name>
+  <packaging>jar</packaging>
+  <description>An adapter to help Wings connect with Apache OODT</description>
+
+  <parent>
+    <groupId>edu.isi.wings</groupId>
+    <artifactId>wings-oodt</artifactId>
+    <version>4.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <oodt.version>0.8-SNAPSHOT</oodt.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <!-- Dependencies -->
+  <dependencies>
+    <!-- log4j -->
+    <dependency>
+      <groupId>edu.isi.wings</groupId>
+      <artifactId>wings-planner</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.wings</groupId>
+      <artifactId>wings-oodt-wmservices</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <!-- Apache OODT Dependencies -->
+    <dependency>
+      <groupId>org.apache.oodt</groupId>
+      <artifactId>cas-filemgr</artifactId>
+      <version>${oodt.version}</version>
+    </dependency>
+  </dependencies>
+</project>

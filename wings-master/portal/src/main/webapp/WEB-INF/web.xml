@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Wings Portal</display-name>
+  <servlet>
+    <description>Login page</description>
+    <display-name>Login page</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>edu.isi.wings.portal.servlets.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>Servlet to Export Graph</description>
+    <display-name>Graph Exporter</display-name>
+    <servlet-name>ExportGraph</servlet-name>
+    <servlet-class>edu.isi.wings.portal.servlets.ExportGraph</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExportGraph</servlet-name>
+    <url-pattern>/export/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>SparqlEndpoint</display-name>
+    <servlet-name>SparqlEndpoint</servlet-name>
+    <servlet-class>edu.isi.wings.portal.servlets.SparqlEndpoint</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SparqlEndpoint</servlet-name>
+    <url-pattern>/sparql</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 
+  	CORS & Compression filters for Non-REST-API servlets
+  	The Jersey REST-APIs have their own filters and interceptors
+  -->
+  <filter>
+    <filter-name>CompressionFilter</filter-name>
+    <filter-class>edu.isi.wings.portal.filters.servlets.CompressionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CompressionFilter</filter-name>
+    <url-pattern>/js/*</url-pattern>
+    <url-pattern>/css/*</url-pattern>
+    <url-pattern>/lib/*</url-pattern>
+    <url-pattern>/jsp/*</url-pattern>
+    <url-pattern>/html/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <filter>
+    <filter-name>CORSFilter</filter-name>
+    <filter-class>edu.isi.wings.portal.filters.servlets.CORSFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CORSFilter</filter-name>
+    <url-pattern>/login/*</url-pattern>
+    <url-pattern>/jsp/*</url-pattern>
+    <url-pattern>/sparql/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  <session-config>
+    <session-timeout>43200</session-timeout>
+  </session-config>
+  
+  <security-role>
+    <role-name>WingsUser</role-name>
+  </security-role>
+  <security-role>
+    <role-name>WingsAdmin</role-name>
+  </security-role>
+  <security-constraint>
+    <display-name>SecurityConstraint</display-name>
+    <web-resource-collection>
+      <web-resource-name>User Application</web-resource-name>
+      <url-pattern>/users/*</url-pattern>
+      <url-pattern>/login/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>WingsUser</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <display-name>SecurityConstraint</display-name>
+    <web-resource-collection>
+      <web-resource-name>Admin Application</web-resource-name>
+      <url-pattern>/users/common/list/*</url-pattern>
+      <url-pattern>/sparql/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>WingsAdmin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/jsp/login/login.jsp</form-login-page>
+      <form-error-page>/jsp/login/login_failed.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+  
+</web-app>

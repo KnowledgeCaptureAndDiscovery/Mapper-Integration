@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.isi.wings</groupId>
+  <artifactId>wings-oodt</artifactId>
+  <name>Wings OODT Engine</name>
+  <description>Wings OODT Engine information</description>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>edu.isi.wings</groupId>
+    <artifactId>wings-core</artifactId>
+    <version>4.0-SNAPSHOT</version>
+    <relativePath>../../core/pom.xml</relativePath>
+  </parent>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>adapter</module>
+    <module>task</module>
+    <module>wmservices</module>
+  </modules>
+</project>
